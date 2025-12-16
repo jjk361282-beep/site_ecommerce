@@ -1,0 +1,7 @@
+la fonction scroolto me permet de scroll ver un cordonne donne
+exple
+
+window.scrollTo({
+     top:600,
+     behavior:"smooth"
+})

@@ -1,0 +1,379 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background: #f9f9f9f9
+}
+/* style du header  */
+.block_phamtom{
+    height: 80px;
+    background-color: #444;
+}
+.en-tete{
+    backdrop-filter: blur(20px);
+    /* background: #c1ebff; */
+    top: 0;
+    height: 80px;
+    box-shadow: -3px 1px 20px 20px black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+img{
+    height: 100%;
+}
+li{
+    
+    text-transform: uppercase;
+    margin: 10px;
+    display: inline;
+    cursor: pointer;
+}
+a{
+    color: #024240;
+    font-size: 1.2em;
+}
+.pannier{
+    /* display: inline-flex; */
+    background-color: red;
+}
+.pannier span{
+    position: absolute;
+    background: #232323;
+    width: 10px;
+    height: 10px;
+    display: flex;
+}
+li:hover{
+    color: #1a98a8;
+    text-decoration: underline;
+}
+
+a.actif{
+    color: rgb(15, 20, 251);
+}
+button{
+    padding: 10px;
+    background-color: #1a98a8;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border:  1px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform .4s ease,box-shadow .5s ease;
+}
+button:hover{
+    box-shadow: -2px 2px 5px 0px black;
+    transform: scale(1.01);
+}
+button:active{
+    box-shadow: 0px 0px 0px black;
+    transform: scale(1);
+}
+input[type="text"]{
+    width: 430px;
+    position: relative;
+    top: 20px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: none;
+}
+
+/* stlyles du corps */
+
+
+/* carouselle  */
+#carouselle{
+    object-fit: cover;
+    width: 100%;
+    height: 45vh;
+}
+
+.dierction{
+    position: absolute;
+    font-size: 4em;
+    color: #fff;
+    backdrop-filter: blur(5px);
+    height: 10vh;
+    border-radius: 50px;
+    width: 50px;
+    top: 30vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    transition:  box-shadow .2s ease-out;
+}
+.dierction:hover{
+    box-shadow: -0px 0px 13px #000;
+}
+.dierction:active{
+    box-shadow: 0 0 0 black;
+}
+.rig{
+    left: 10px;
+
+}
+.left{
+    right: 10px;
+}
+.grand{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+.point{
+    background-color: #ff8880;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .4s ease-out;
+}
+.point:hover{
+    background-color: #00191933;
+}
+.point:nth-child(1){
+    background-color: #030400;
+    /* width: 65px; */
+    z-index: 2;
+}
+/* gestion des articles */
+.block_article{
+    width: 100% ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* display: grid;
+    grid-template-columns: repeat(3,minmax(100px,1fr));*/
+} 
+
+article{
+    height: 350px;
+    background-color: #999999;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    margin: 10px;
+    border-radius: 5px;
+    /* padding: 10px; */
+}
+h3{
+    text-align: center;
+    margin: 10px;
+    text-decoration: underline;
+    font-size: .9em;
+    color: #f9f9f9f9;
+    text-transform: uppercase;
+}
+.contenue_article{
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    height: 70%;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    transition: opacity .3s ease-out;
+}
+span{
+    font-size: 2.6em;
+}
+h4{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+p{
+    margin: 10px;
+    text-align: center;
+}
+.image_ten{
+    height: 100%;
+}
+.element_1{
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 1s ease;
+    /* transition: width 1s,top .4s ease; */
+
+}
+.action{
+    display: flex;
+    justify-content: end;
+}
+#add{
+    width: 130px;
+    height: 35px;
+    background-color: #c1f1f1;
+    margin-right: 10px;
+}
+#add:hover{
+    box-shadow: 0 0 0 black;
+}
+.block_commandaire{
+    background: #dfdfdf;
+    margin-top: 15px ;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.burger{
+    display: none;
+}
+
+article:hover{
+    display: block;
+    overflow: hidden;
+}
+article:has(:hover) .element_1{
+    width: 30vw;
+    height: 280px;
+    object-fit: cover;
+    top: -50px;
+    margin: 0;
+    animation: vue 1s forwards;
+}
+article:has(:hover) .description{
+    opacity: 0;
+}
+.defillement_carouselle{
+    width: 100%;
+    height: 20vh;
+    background-color: #2324;
+    display: flex;
+    padding: 10px;
+    /* overflow: hidden; */
+    box-shadow: inset 1px 0px 20px 0px black;
+}
+.group{
+    /* animation: spin 5s linear infinite; */
+}
+.scroll_carousselle{
+    height: 75%;
+    margin: 10px;
+    object-fit: cover;
+}
+@keyframes spin {
+    from{
+        translate: 0;
+    }
+    to{
+        translate: -100%;
+    }
+}
+
+@keyframes vue {
+    /* 0%{
+        top: -10px;
+    }
+    25%{
+        top: -20px;
+        width: 10vw;
+    }
+    50%{
+        top: -30px;
+        width: 15vw;
+    }
+    75%{
+        top: -40px;
+        width: 20vw;
+    }
+    100%{
+        top: -50px;
+        width: 30vw;
+    } */
+     from{
+        top: -10px;
+        width: 10vw;
+     }
+     to{
+        top: -50px;
+        width: 30vw;
+     }
+}
+@media (max-width:1024px) {
+    /* .contenue_article{
+        grid-template-columns: repeat(2,1fr);
+    } */
+    nav{
+        display: none;
+    }
+    .burger{
+        width: 50px;
+        position: relative;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .burger:hover{
+        box-shadow: 0 0 0 black;
+        transform: scale(1);
+    }
+    .burger_groupe{
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-55%,-30%);
+        width: 100%;
+        height: 100%;
+    }
+    .ligne{
+        position: relative;
+        width: 110%;
+        display: block;
+        height: 3px;
+        margin: 1px;
+        background-color: #232323;
+    }
+    .ligne:nth-child(1){
+        top: 50px;
+    }
+    article{
+        width: 30vw;
+        height: 450px;
+        overflow-x:auto;
+    }
+    .contenue_article{
+        flex-direction: column;
+    }
+    .image_ten{
+        display: flex;
+        justify-content: center;
+    }
+    h3{
+        display: none;
+    }
+    .element_1{
+        height: 75%;
+        width: 30vw;
+        margin: 0;
+        object-fit: cover;
+    }
+    span{
+        color: #fff;
+        font-size: 2em;
+    }
+    .description{
+        overflow: hidden;
+    }
+}
